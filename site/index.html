@@ -7,16 +7,40 @@
     <title>Document</title>
 </head>
 
+<style>
+    button.remove{
+        display: none;
+    }
+</style>
+
 <body>
 
     <h1>Olá, Mundo!!</h1>
-    <p>Milton Chissengue, 19 anos de idade</p>
-    <button style="background-color: green;border: 1px solid transparent;color: white;text-transform:Uppercase;"
-        onclick="milto()">MiltoChisse</button>
-        <button style="background-color: red;color: white; border: 1px solid transparent;">Deletar</button>
+    <p>Eu surdo, <span>Milton Chissengue</span>, 19 anos de idade.</p>
+    <button style="background-color: green;border: 1px solid transparent;color: white;"
+        onclick="mudar()">Mudar</button>
+    <button style="background-color: blue;border: 1px solid transparent;color: white;"
+        onclick="digitar()">Digitar</button>
+    <button onclick="deletar()" style="background-color: red;color: white; border: 1px solid transparent;">Deletar</button>
     <script>
-        function milto() {
-            alert("hello world")
+        const span = document.querySelector("span");
+        const but2 = document.getElementsByTagName("button")[2];
+        function mudar() {
+            span.innerHTML = "MiltoChisse";
+            if(but2.classList.toggle("remove")){
+                but2.classList.remove("remove");
+            }
+        }
+        function digitar(){
+            const nome = prompt("Digite seu nome");
+            span.innerHTML=nome;
+            if(but2.classList.toggle("remove")){
+                but2.classList.remove("remove");
+            }
+        }
+        function deletar(){
+            span.innerHTML = "";
+            but2.classList.add("remove");
         }
     </script>
 </body>
