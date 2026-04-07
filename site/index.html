@@ -26,16 +26,20 @@
         const span = document.querySelector("span");
         const but2 = document.getElementsByTagName("button")[2];
         function mudar() {
-            span.innerHTML = "MiltoChisse";
+            span.innerHTML = 19;
             if(but2.classList.toggle("remove")){
                 but2.classList.remove("remove");
             }
         }
         function digitar(){
-            const nome = prompt("Digite seu nome");
-            span.innerHTML=nome;
-            if(but2.classList.toggle("remove")){
+            var idade = prompt("Digite sua idade");
+            if (!isNaN(idade) && idade.trim() !== ""){
+                span.innerHTML=idade;
+                if(but2.classList.toggle("remove")){
                 but2.classList.remove("remove");
+                }
+            }else{
+                alert("idade invalida!");
             }
         }
         function deletar(){
